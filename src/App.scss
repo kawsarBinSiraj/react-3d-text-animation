@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+#app {
+  font-family: 'Lobster', cursive;
+  display: inline-flex;
+  justify-content: center;
+  color: #fff;
+  perspective: 600px;
+  --width: 26px;
+
+  .app-widget {
+    width: var(--width);
+    height: 125px;
+    position: relative;
+    border: 1px solid salmon;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all .6s;
+    animation: rotate 6s var(--delay) infinite ease-in-out;
+
+    &::after {
+      content: 'Kawsar Bin Siraj';
+      font-size: 95px;
+      position: absolute;
+      width: max-content;
+      left: var(--left);
+      color: var(--color);
+    }
+
+    &:hover {
+      transform: scale(1.5);
+    }
+
+    @for $i from 0 through 25 {
+      &:nth-child(#{$i + 1}) {
+        --left: calc(var(--width) * #{$i * -1});
+        --color: hsl(calc(360 / 24 * #{$i}), 75%, 75%);
+        --delay : #{$i * 0.1s};
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg);
+  }
+
+  to {
+    transform: rotateX(360deg);
+  }
+}
