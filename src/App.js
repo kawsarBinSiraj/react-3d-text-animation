@@ -6,7 +6,7 @@ const RootComponent = () => {
   return (
     <>
       <div id="RootComponent" style={{ textAlign: 'center'}}>
-        <a href="https://kawsarbinsiraj.github.io/" target="_blank" id="app">
+        <a href="https://kawsarbinsiraj.github.io/" target="_blank" rel="noreferrer" id="app">
           <div className="app-widget"></div>
           <div className="app-widget"></div>
           <div className="app-widget"></div>
